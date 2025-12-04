@@ -10,10 +10,9 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import { useDebounce } from "use-debounce";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
-import { NoteTag } from "@/types/note";
 
 interface NotesProps {
-  tag?: NoteTag;
+  tag?: string;
 }
 
 function NotesClient({ tag }: NotesProps) {

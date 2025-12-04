@@ -18,7 +18,7 @@ export interface NewNoteData {
 export interface FetchNotesParams {
   page: number;
   search: string;
-  tag?: NoteTag;
+  tag?: string;
 }
 
 export async function fetchNotes({

@@ -1,8 +1,8 @@
 import css from "./NotesSidebar.module.css";
 import Link from "next/link";
-import { tagList } from "@/types/note";
 
 const NotesSidebar = async () => {
+  const tagList = ["Todo", "Work", "Personal", "Meeting", "Shopping"];
   return (
     <ul className={css.menuList}>
       <li className={css.menuItem}>
