@@ -1,22 +1,60 @@
 /* components/Footer.module.css */
 
 .footer {
-  padding: 20px;
-  background-color: #f0f0f0;
+  padding: 30px;
+  background-color: var(--secondary-color);
   text-align: center;
   font-size: 14px;
   color: #555;
-  border-top: 1px solid #ddd;
+  clip-path: polygon(
+    0px calc(100% - 20px),
+    4px calc(100% - 20px),
+    4px calc(100% - 12px),
+    8px calc(100% - 12px),
+    8px calc(100% - 8px),
+    12px calc(100% - 8px),
+    12px calc(100% - 4px),
+    20px calc(100% - 4px),
+    20px 100%,
+    calc(100% - 20px) 100%,
+    calc(100% - 20px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 4px),
+    calc(100% - 12px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 12px),
+    calc(100% - 4px) calc(100% - 20px),
+    100% calc(100% - 20px),
+    100% 20px,
+    calc(100% - 4px) 20px,
+    calc(100% - 4px) 12px,
+    calc(100% - 8px) 12px,
+    calc(100% - 8px) 8px,
+    calc(100% - 12px) 8px,
+    calc(100% - 12px) 4px,
+    calc(100% - 20px) 4px,
+    calc(100% - 20px) 0px,
+    20px 0px,
+    20px 4px,
+    12px 4px,
+    12px 8px,
+    8px 8px,
+    8px 12px,
+    4px 12px,
+    4px 20px,
+    0px 20px
+  );
 }
 
 .wrap {
+  font-family: var(--font-space-mono);
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
 .footer a {
-  color: #226ec5;
+  color: var(--accent-1);
   font-weight: 600;
   text-decoration: none;
 }

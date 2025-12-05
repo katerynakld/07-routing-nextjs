@@ -1,6 +1,10 @@
 :root {
-  --background: #ffffff;
+  --background: #f7f7f7;
   --foreground: #171717;
+  --primary-color: #ff9c5b;
+  --secondary-color: #fff67e;
+  --accent-1: #ac0b29;
+  --accent-2: #042378;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,17 +18,18 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF67E" stroke="%23042378" stroke-width="2.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'),
+    auto;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--font-press-start), "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
   margin: 0;
-  background-color: #f8f9fa;
+  background-color: #f7f7f7;
 }
 
 * {

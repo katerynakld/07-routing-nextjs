@@ -10,11 +10,15 @@ function Header() {
 
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
-          <li>
-            <Link href="/">Home</Link>
+          <li className={css.navigationItem}>
+            <Link href="/" className={css.navigationLink}>
+              Home
+            </Link>
           </li>
-          <li>
-            <Link href="/notes/filter/all">Notes</Link>
+          <li className={css.navigationItem}>
+            <Link href="/notes/filter/all" className={css.navigationLink}>
+              Notes
+            </Link>
           </li>
         </ul>
       </nav>

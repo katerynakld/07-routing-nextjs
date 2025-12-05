@@ -17,18 +17,21 @@ export interface NewNoteData {
 
 export interface FetchNotesParams {
   page: number;
+  perPage: number;
   search: string;
   tag?: string;
 }
 
 export async function fetchNotes({
   page,
+  perPage = 12,
   search,
   tag,
 }: FetchNotesParams): Promise<NotesResponse> {
   const response = await axios.get<NotesResponse>(API_URL, {
     params: {
       page,
+      perPage,
       search,
       tag,
     },

@@ -12,7 +12,11 @@ const NotesSidebar = async () => {
       </li>
       {tagList.map((tag) => (
         <li key={tag} className={css.menuItem}>
-          <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
+          <Link
+            href={`/notes/filter/${tag}`}
+            className={css.menuLink}
+            data-text={tag}
+          >
             {tag}
           </Link>
         </li>

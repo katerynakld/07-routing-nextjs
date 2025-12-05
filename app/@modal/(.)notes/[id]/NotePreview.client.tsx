@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import css from "./NoteDetails.module.css";
+import css from "./NotePreview.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { fetchNoteById } from "@/lib/api";
 import Loading from "@/app/loading";
@@ -9,6 +9,7 @@ import Modal from "@/components/Modal/Modal";
 
 function NotePreviewClient() {
   const { id } = useParams<{ id: string }>();
+
   const router = useRouter();
 
   const close = () => router.back();
@@ -35,6 +36,7 @@ function NotePreviewClient() {
     <Modal onClose={close}>
       <div className={css.container}>
         <div className={css.item}>
+          <p className={css.tag}>{note.tag}</p>
           <div className={css.header}>
             <h2>{note.title}</h2>
           </div>

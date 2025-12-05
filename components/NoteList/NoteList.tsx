@@ -32,15 +32,19 @@ function NoteList({ notes }: NoteListProps) {
             <p className={css.content}>{note.content}</p>
             <div className={css.footer}>
               <span className={css.tag}>{note.tag}</span>
-              <Link href={`/notes/${note.id}`} className={css.viewButton}>
-                View Details
-              </Link>
-              <button
-                className={css.button}
-                onClick={() => handleDelete(note.id)}
-              >
-                Delete
-              </button>
+              <span className={css.buttons}>
+                <div className={css.viewButtonBox}>
+                  <Link href={`/notes/${note.id}`} className={css.viewButton}>
+                    View Details
+                  </Link>
+                </div>
+                <button
+                  className={css.button}
+                  onClick={() => handleDelete(note.id)}
+                >
+                  Delete
+                </button>
+              </span>
             </div>
           </li>
         );

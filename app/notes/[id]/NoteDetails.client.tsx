@@ -30,6 +30,7 @@ function NoteDetailsClient() {
   return (
     <div className={css.container}>
       <div className={css.item}>
+        <p className={css.tag}>{note.tag}</p>
         <div className={css.header}>
           <h2>{note.title}</h2>
         </div>

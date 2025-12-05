@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import css from "./Modal.module.css";
 import { createPortal } from "react-dom";
@@ -37,7 +39,14 @@ function Modal({ onClose, children }: ModalProps) {
       aria-modal="true"
       onClick={handleBackdropClick}
     >
-      <div className={css.modal}>{children}</div>
+      <div className={css.modal}>
+        <div className={css.buttonBox}>
+          <button onClick={onClose} className={css.button}>
+            Close
+          </button>
+        </div>
+        {children}
+      </div>
     </div>,
     document.body
   );

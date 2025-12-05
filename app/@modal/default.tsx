@@ -1,3 +1,5 @@
-const Modal = () => null;
+const ModalWindow = () => {
+  return null;
+};
 
-export default Modal;
+export default ModalWindow;

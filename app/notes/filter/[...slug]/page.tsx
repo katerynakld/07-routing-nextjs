@@ -20,12 +20,11 @@ const NotesByCategory = async ({ params }: Props) => {
     queryFn: () =>
       fetchNotes({
         page: 1,
+        perPage: 12,
         search: "",
         tag: targetTag,
       }),
   });
-
-  console.log(targetTag);
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
