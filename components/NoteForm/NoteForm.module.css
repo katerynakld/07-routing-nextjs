@@ -1,4 +1,5 @@
 .form {
+  margin: 24px auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -12,15 +13,58 @@
   color: #212529;
 }
 
+.form label {
+  color: var(--accent-2);
+  margin-bottom: 8px;
+}
+
 .input,
 .textarea,
 .select {
   margin-top: 4px;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #ced4da;
+  font-family: var(--font-space-mono);
+  border: 3px solid var(--primary-color);
   border-radius: 4px;
   resize: none;
+  clip-path: polygon(
+    0px calc(100% - 4px),
+    2px calc(100% - 4px),
+    2px calc(100% - 2px),
+    4px calc(100% - 2px),
+    4px 100%,
+    calc(100% - 4px) 100%,
+    calc(100% - 4px) calc(100% - 2px),
+    calc(100% - 2px) calc(100% - 2px),
+    calc(100% - 2px) calc(100% - 4px),
+    100% calc(100% - 4px),
+    100% 4px,
+    calc(100% - 2px) 4px,
+    calc(100% - 2px) 2px,
+    calc(100% - 4px) 2px,
+    calc(100% - 4px) 0px,
+    4px 0px,
+    4px 2px,
+    2px 2px,
+    2px 4px,
+    0px 4px
+  );
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus-within,
+.textarea:focus-within,
+.select:focus-within {
+  outline: none;
+}
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: #e57f3d;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF67E" stroke="%23042378" stroke-width="2.5" d="M15 9V4.5c0-.83-.67-1.5-1.5-1.5h-3C9.67 3 9 3.67 9 4.5V9H4.5C3.67 9 3 9.67 3 10.5v3c0 .83.67 1.5 1.5 1.5H9v4.5c0 .83.67 1.5 1.5 1.5h3c.83 0 1.5-.67 1.5-1.5V15h4.5c.83 0 1.5-.67 1.5-1.5v-3c0-.83-.67-1.5-1.5-1.5H15Z"></path></svg>'),
+    auto;
 }
 
 .actions {
@@ -30,18 +74,37 @@
 }
 
 .submitButton {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #0d6efd;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  font-family: var(--font-press-start);
+  padding: 8px 8px;
+  font-size: 8px;
+  line-height: 1;
   color: #fff;
+  position: relative;
+  background-color: var(--accent-2);
   border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),
+    auto;
   transition: background-color 0.2s ease;
 }
 
 .submitButton:hover {
-  background-color: #0b5ed7;
+  background-color: #4f65a0;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF67E" stroke="%23042378" stroke-width="2.5" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),
+    auto !important;
 }
 
 .submitButton:disabled {
@@ -49,23 +112,68 @@
   cursor: not-allowed;
 }
 
+.submitButton:active {
+  top: 4px;
+  background-color: #f3d34a;
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+}
+
+.submitButton:active::after {
+  bottom: -5px;
+}
+
 .cancelButton {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #f8f9fa;
-  color: #212529;
-  border: 1px solid #ced4da;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  font-family: var(--font-press-start);
+  padding: 8px 8px;
+  font-size: 8px;
+  line-height: 1;
+  color: #fff;
+  position: relative;
+  background-color: var(--accent-1);
+  border: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 6px 0 rgba(59, 129, 131, 0.4);
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),
+    auto;
   transition: background-color 0.2s ease;
 }
 
 .cancelButton:hover {
-  background-color: #e2e6ea;
+  background-color: #bb2d3b;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF67E" stroke="%23042378" stroke-width="2.5" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),
+    auto !important;
+}
+
+.cancelButton:active {
+  top: 4px;
+  background-color: #f3d34a;
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+}
+
+.cancelButton:active::after {
+  bottom: -5px;
 }
 
 .error {
-  color: #dc3545;
-  font-size: 12px;
+  color: var(--accent-1);
+  font-size: 8px;
   margin-top: 4px;
 }

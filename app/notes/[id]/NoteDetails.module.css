@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 4px dotted var(--accent-2);
   padding-bottom: 8px;
 }
 
