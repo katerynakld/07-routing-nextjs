@@ -19,7 +19,7 @@ export interface FetchNotesParams {
   page: number;
   perPage: number;
   search: string;
-  tag?: string;
+  tag?: NoteTag;
 }
 
 export async function fetchNotes({
@@ -64,11 +64,11 @@ export async function deleteNote(noteID: string) {
   return deletedNote.data;
 }
 
-export const fetchNoteById = async (noteId: string) => {
-  const response = await axios.get(`${API_URL}/${noteId}`, {
+export async function fetchNoteById(noteId: string): Promise<Note> {
+  const response = await axios.get<Note>(`${API_URL}/${noteId}`, {
     headers: {
       Authorization: `Bearer ${NOTEHUB_TOKEN}`,
     },
   });
   return response.data;
-};
+}
