@@ -5,6 +5,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import NotesClient from "./Notes.client";
+import { NoteTag } from "@/types/note";
 
 type Props = {
   params: Promise<{ slug: string[] }>;
@@ -12,7 +13,7 @@ type Props = {
 
 const NotesByCategory = async ({ params }: Props) => {
   const { slug } = await params;
-  const targetTag = slug[0] === "all" ? undefined : slug[0];
+  const targetTag = slug[0] === "all" ? undefined : (slug[0] as NoteTag);
 
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
